@@ -5,6 +5,7 @@
 function [imresult] = p1tikhonov(obj, lambda)
   [h, w, ~] = size(obj.imblur);
   s = obj.s;
+  disp(min(s));
   b = obj.imblur;
   f = conj(s) ./ (conj(s) .* s + lambda^2);
   imresult = obj.imblur;
@@ -14,3 +15,4 @@ function [imresult] = p1tikhonov(obj, lambda)
     imresult(:,:,k) = real(ifft2(X));
   end
 end
+    

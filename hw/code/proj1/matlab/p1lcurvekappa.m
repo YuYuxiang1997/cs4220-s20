@@ -1,5 +1,5 @@
 % function [rnorm, xnorm, kappa, deta] = p1lcurve(obj, lambda)
-function [rnorm,xnorm,kappa,deta] = p1lcurve(obj, lambda)
+function [kappa] = p1lcurvekappa(obj, lambda)
   b     = double(obj.imblur);
   imtik = p1tikhonovd(obj, lambda);
   resid = p1applyH(obj, imtik)-b;
